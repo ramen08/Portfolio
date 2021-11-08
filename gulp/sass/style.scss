@@ -25,6 +25,7 @@ $time-4: 200s;
 
 body {
   font-family: "Public Sans",sans-serif;
+  margin: 0;
 }
 
 .banner-bg, .animation-wrapper {
@@ -114,9 +115,8 @@ body {
 //===================================
 .banner-section{
   h1{
-    font-size: 36px;
+    font-size: 46px;
     color: #fefefe;
-    max-width: 600px;
 
     em{
       color: #479BC0;
@@ -131,7 +131,7 @@ body {
     a{
       color: #fefefe;
       text-decoration: none;
-      font-size: 18px;
+      font-size: 20px;
 
       &:hover{
         text-decoration: underline;
@@ -141,7 +141,7 @@ body {
         content: "\f178";
         opacity: 1!important;
         display: inline-block!important;
-        font-size: 18px;
+        font-size: 20px;
         visibility: visible;
         margin: 0 0 0 10
     px
@@ -155,4 +155,11 @@ body {
       }
     }
   }
+}
+
+
+.why-choose-easybank-section{
+  background: #0b3d91;
+  color: #fff;
+  margin-top: -20px;
 }
