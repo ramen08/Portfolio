@@ -48,12 +48,6 @@ body {
   background: transparent;
 }
 
-.particle:after {
-  position: absolute;
-  content: "";
-  top: $spacing;
-}
-
 .particle-1 {
   animation: animParticle $time-1 linear infinite;
   @include particles(1000);
@@ -137,6 +131,28 @@ body {
     a{
       color: #fefefe;
       text-decoration: none;
+      font-size: 18px;
+
+      &:hover{
+        text-decoration: underline;
+      }
+
+      &:after{
+        content: "\f178";
+        opacity: 1!important;
+        display: inline-block!important;
+        font-size: 18px;
+        visibility: visible;
+        margin: 0 0 0 10
+    px
+    !important;
+        font-weight: 300;
+        line-height: 37.5px;
+        position: relative;
+        vertical-align: middle;
+        margin-left: 10px;
+        font-family: "Font Awesome 5 Pro"!important;
+      }
     }
   }
 }
