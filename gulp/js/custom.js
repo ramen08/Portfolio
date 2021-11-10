@@ -1,12 +1,12 @@
 jQuery(function(){
     
     //functions
-    initFullHeightBanner();
+    //initFullHeightBanner();
 });
 
 
 jQuery(window).on('load resize orientationchange', function(){
-    initFullHeightBanner();
+   //initFullHeightBanner();
 });
 //-----------------------------------------------------
 // Full Height Banner
