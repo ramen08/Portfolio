@@ -43,7 +43,7 @@ body {
 .heading-with-line{
   &:after{
     content: "";
-    background: #479BC0;
+    background: #334756;
     height: 1px;
     width: 300px;
     display: inline-block;
@@ -151,6 +151,7 @@ h2{
   h1{
     font-size: 46px;
     color: #fefefe;
+    width: 100%;
 
     em{
       color: #479BC0;
@@ -169,6 +170,10 @@ h2{
 
       &:hover{
         text-decoration: underline;
+
+        &:after{
+          padding-left: 10px;
+        }
       }
 
       &:after{
@@ -184,7 +189,43 @@ h2{
         vertical-align: middle;
         margin-left: 10px;
         font-family: "Font Awesome 5 Pro"!important;
+        transition: padding .5s ease;
       }
+    }
+  }
+
+  .content-col{
+    
+  }
+
+  .typewriter{
+    animation: typing 4s steps(44) 1s 1 normal both,
+    blink-caret 1000ms steps(44) infinite normal;
+    overflow: hidden; 
+    border-right: .15em solid #479bc0; 
+    white-space: nowrap; 
+    letter-spacing: 2px;
+    display: inline-block;
+    vertical-align: bottom;
+  }
+
+  /* The typing effect */
+  @keyframes typing {
+    from { 
+      width: 0;
+    }
+    to { 
+      width: 476px;
+    }
+  }
+
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { 
+      border-color: transparent;
+    }
+    50% { 
+      border-color: #479bc0 ;
     }
   }
 }
@@ -193,7 +234,7 @@ h2{
 // - About
 //===================================
 .about-section{
-  background: #0b3d91;
+  background: #082032;
   color: #fff;
   padding: 30px 0;
 
@@ -216,9 +257,11 @@ h2{
           img{
             max-height: 300px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-            transition: all 5.1s cubic-bezier(.25,.8,.25,1);
+            transition: all 1.1s cubic-bezier(.25,.8,.25,1);
             animation-name: hover-out;
             animation-duration: 0.15s;
+            border-radius: 10px;
+            border-color: #479BC0;
 
             &:hover{
               border-top-left-radius: 10px;
@@ -280,13 +323,13 @@ h2{
           img{
             max-height: 300px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-            transition: all 5.1s cubic-bezier(.25,.8,.25,1);
+            transition: border 1.1s cubic-bezier(.25,.8,.25,1);
             animation-name: hover-out;
             animation-duration: 0.15s;
+            border-radius: 10px;
+            border-color: #479BC0;
 
             &:hover{
-              border-top-left-radius: 10px;
-              border-bottom-left-radius: 10px;
               animation-name: hover-in;
               animation-duration: 0.15s;
               border-left: 8px solid #479BC0;
