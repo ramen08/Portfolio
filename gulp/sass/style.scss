@@ -26,6 +26,10 @@ $time-4: 200s;
 //===================================
 // - Default
 //===================================
+html{
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Public Sans",sans-serif;
   margin: 0;
