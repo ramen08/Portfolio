@@ -1,0 +1,270 @@
+//usage : for semi transparent colors
+//e.g backgrounds
+@mixin alpha-background-color($color, $background: white) {
+  $percent: alpha($color) * 100%;
+  $opaque: opacify($color, 1);
+  $solid-color: mix($opaque, $background, $percent);
+  background-color: $solid-color;
+  background-color: $color;
+}
+
+
+/// Animate css properties
+// usage
+// scss - @include animate(color);
+//     or @include animate(color width);
+//     or @include animate(color width, 1s, linear);
+//
+$animation-speed: .3s !default;
+
+@mixin animate($properties, $duration: $animation-speed, $easing: ease-in-out, $important: false ) {
+  $list:();
+  @each $prop in $properties {
+    $str: #{$prop} #{$duration} #{$easing};
+    $list: join($list, #{$str}, comma);
+  }
+
+  $important_attr : '';
+  @if $important == true {
+    $important_attr : ' !important';
+  }
+
+  -moz-transition: $list #{ $important_attr };
+  -webkit-transition: $list #{ $important_attr };
+  transition: $list #{ $important_attr };
+}
+
+/// Animation css properties
+// usage
+// scss - @include animation(NAME-YOUR-ANIMATION);
+//     or @include animate(NAME-YOUR-ANIMATION, 1s, infinite);
+//
+$animation-speed: .3s !default;
+
+@mixin animation($properties, $duration: $animation-speed, $easing: infinite) {
+  $list:();
+  @each $prop in $properties {
+    $str: #{$prop} #{$duration} #{$easing};
+    $list: join($list, #{$str}, comma);
+  }
+  -webkit-animation: $list;
+  -moz-animation: $list;
+  -o-animation: $list;
+  animation: $list;
+}
+
+// usage: Set cross browser border radius
+@mixin border-radius($values...) {
+  @each $val in $values {
+    -webkit-border-radius: #{$val};
+    -moz-border-radius: #{$val};
+    border-radius: #{$val};
+  }
+}
+
+// usage: Set style for input fields
+@mixin fields {
+  input[type=search],
+  input[type=url],
+  input[type=number],
+  input[type=text],
+  input[type=password],
+  input[type=tel],
+  input[type=email],
+  input.text,
+  input.title,
+  textarea, select {
+    @content;
+  }
+}
+
+// usage: Add placeholder style for input fields
+@mixin placeholder {
+  .placeholder { @content; }
+  :-moz-placeholder { @content; }
+  ::-moz-placeholder { @content; }
+  :-ms-input-placeholder { @content; }
+  ::-webkit-input-placeholder { @content; }
+  ::placeholder { @content; }
+  :placeholder { @content; }
+}
+
+@mixin push-auto {
+  margin: {
+    left: auto;
+    right: auto;
+  }
+}
+
+// keyframes mixin
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+
+// generic transform
+@mixin transform($transforms) {
+  -moz-transform: $transforms;
+  -o-transform: $transforms;
+  -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+  transform: $transforms;
+}
+
+
+//box shadow
+@mixin box-shadow($shadow) {
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+
+// User select
+// For selecting text on the page
+
+@mixin user-select($select) {
+  -webkit-user-select: $select;
+  -moz-user-select: $select;
+  -ms-user-select: $select; // IE10+
+  user-select: $select;
+}
+
+// WebKit-style focus
+@mixin tab-focus() {
+  // WebKit-specific. Other browsers will keep their default outline style.
+  // (Initially tried to also force default via `outline: initial`,
+  // but that seems to erroneously remove the outline in Firefox altogether.)
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+
+// Opacity
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  // IE8 filter
+  $opacity-ie: ($opacity * 100);
+  filter: alpha(opacity=$opacity-ie);
+}
+
+/// Triangle helper mixin
+@mixin triangle ($width: 15px, $direction: "down", $color: #333333) {
+  @if $direction == "up" {
+    width: 0;
+    height: 0;
+    border-left: $width / 2 solid transparent;
+    border-right: $width / 2 solid transparent;
+    border-bottom: $width / 2 solid $color;
+  } @else if $direction == "left" {
+    width: 0;
+    height: 0;
+    border-top: $width / 2 solid transparent;
+    border-bottom: $width / 2 solid transparent;
+    border-right: $width / 2 solid $color;
+  } @else if $direction == "right" {
+    width: 0;
+    height: 0;
+    border-top: $width / 2 solid transparent;
+    border-bottom: $width / 2 solid transparent;
+    border-left: $width / 2 solid $color;
+  } @else {
+    width: 0;
+    height: 0;
+    border-left: $width / 2 solid transparent;
+    border-right: $width / 2 solid transparent;
+    border-top: $width / 2 solid $color;
+  }
+
+}
+
+/// Shorthand mixin for offset positioning
+/// @param {String} $position - Either `relative`, `absolute` or `fixed`
+/// @param {Length} $top [null] - Top offset
+/// @param {Length} $right [null] - Right offset
+/// @param {Length} $bottom [null] - Bottom offset
+/// @param {Length} $left [null] - Left offset
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin flex($value) {
+  -webkit-box-flex: $value; 
+  -moz-box-flex: $value;        
+  -webkit-flex: $value;     
+  -ms-flex: $value;        
+  flex: $value;
+}
+
+/* flexbox */
+@mixin flexbox($ai, $jc) {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -o-flex;
+  display: flex;
+
+  -webkit-box-align: $ai;
+  -moz-box-align: $ai;
+  -ms-flex-align: $ai;
+  -webkit-align-items: $ai;
+  align-items: $ai;
+
+  -webkit-box-pack: $jc;
+  -moz-box-pack: $jc;
+  -ms-flex-pack: $jc;
+  -webkit-justify-content: $jc;
+  justify-content: $jc;
+}
+
+@mixin only-firefox(){
+
+  @-moz-document url-prefix() {
+    @content;
+  }
+}
+
+@mixin firefox-only(){
+
+  @-moz-document url-prefix() {
+    @content;
+  }
+}
+
+@mixin ie-only() {
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    @content;
+  }
+}
+@mixin safari-only() {
+  @media screen and (-webkit-min-device-pixel-ratio:0) {
+    @content;
+  }
+}
+
+@function particles($max) {
+  $val: 0px 0px $color-particle;
+  @for $i from 1 through $max {
+    $val: #{$val}, random($spacing)+px random($spacing)+px $color-particle;
+  }
+  @return $val;
+}
+
+@mixin particles($max) {
+  box-shadow: particles($max);
+  border-radius: 50%;
+}

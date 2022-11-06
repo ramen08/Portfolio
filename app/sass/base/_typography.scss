@@ -1,0 +1,205 @@
+/* ---------------------------------------------------------
+   Typography
+   ---------------------------------------------------------*/
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6,
+.h {
+  font-family: $headings-font-family;
+  font-weight: $fw-bold;
+  line-height: 1.1;
+  padding:0 0 10px;
+  color: $headings-color;
+}
+
+.et_pb_column_1_3 h1,
+.et_pb_column_1_4 h1,
+.et_pb_column_1_5 h1,
+.et_pb_column_1_6 h1,
+.et_pb_column_2_5 h1,
+h1, .h1 {
+  font-size: $h1-font-size;
+}
+
+.et_pb_column_1_3 h2,
+.et_pb_column_1_4 h2,
+.et_pb_column_1_5 h2,
+.et_pb_column_1_6 h2,
+.et_pb_column_2_5 h2,
+h2, .h2 {
+  font-size: $h2-font-size;
+}
+
+.et_pb_column_1_3 h3,
+.et_pb_column_1_4 h3,
+.et_pb_column_1_5 h3,
+.et_pb_column_1_6 h3,
+.et_pb_column_2_5 h3,
+h3, .h3 {
+  font-size: $h3-font-size;
+}
+
+.et_pb_column_1_3 h4,
+.et_pb_column_1_4 h4,
+.et_pb_column_1_5 h4,
+.et_pb_column_1_6 h4,
+.et_pb_column_2_5 h4,
+h4, .h4 {
+  font-size: $h4-font-size;
+}
+
+.et_pb_column_1_3 h5,
+.et_pb_column_1_4 h5,
+.et_pb_column_1_5 h5,
+.et_pb_column_1_6 h5,
+.et_pb_column_2_5 h5,
+h5, .h5 {
+  font-size: $h5-font-size;
+}
+
+.et_pb_column_1_3 h6,
+.et_pb_column_1_4 h6,
+.et_pb_column_1_5 h6,
+.et_pb_column_1_6 h6,
+.et_pb_column_2_5 h6,
+h6, .h6 {
+  font-size: $h6-font-size;
+}
+
+@include media('<tablet') {
+
+  .et_pb_column_1_3 h1,
+  .et_pb_column_1_4 h1,
+  .et_pb_column_1_5 h1,
+  .et_pb_column_1_6 h1,
+  .et_pb_column_2_5 h1,
+  h1, .h1{
+    font-size: $h1-font-size-mobile;
+  }
+
+  .et_pb_column_1_3 h2,
+  .et_pb_column_1_4 h2,
+  .et_pb_column_1_5 h2,
+  .et_pb_column_1_6 h2,
+  .et_pb_column_2_5 h2,
+  h2, .h2 {
+    font-size: $h2-font-size-mobile;
+    word-wrap: break-word;
+  }
+
+  .et_pb_column_1_3 h3,
+  .et_pb_column_1_4 h3,
+  .et_pb_column_1_5 h3,
+  .et_pb_column_1_6 h3,
+  .et_pb_column_2_5 h3,
+  h3, .h3 {
+    font-size: $h3-font-size-mobile;
+  }
+
+  .et_pb_column_1_3 h4,
+  .et_pb_column_1_4 h4,
+  .et_pb_column_1_5 h4,
+  .et_pb_column_1_6 h4,
+  .et_pb_column_2_5 h4,
+  h4, .h4 {
+    font-size: $h4-font-size-mobile;
+  }
+
+  .et_pb_column_1_3 h5,
+  .et_pb_column_1_4 h5,
+  .et_pb_column_1_5 h5,
+  .et_pb_column_1_6 h5,
+  .et_pb_column_2_5 h5,
+  h5, .h5 {
+    font-size: $h5-font-size-mobile;
+  }
+
+  .et_pb_column_1_3 h6,
+  .et_pb_column_1_4 h6,
+  .et_pb_column_1_5 h6,
+  .et_pb_column_1_6 h6,
+  .et_pb_column_2_5 h6,
+  h6, .h6 {
+    font-size: $h6-font-size-mobile;
+  }
+
+}
+
+
+p {
+  padding-bottom: 1.5em;
+  margin: 0;
+
+  &:last-of-type{
+    padding-bottom: 0;
+  }
+}
+
+.lead {
+  margin-bottom: 20px;
+  font-size: $h5-font-size;
+  line-height: 1.4;
+
+  @include media('>=tablet') {
+    font-size: 21px;
+  }
+}
+
+a {
+  @extend %linkAnimate;
+  color: $link-color;
+  text-decoration: none;
+  outline: none;
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: $link-hover-color;
+    outline: none;
+  }
+}
+
+
+.text-right{
+  text-align: right;
+}
+
+.text-center{
+  text-align: center;
+}
+
+
+.background-dark{
+  color: $color-white;
+
+  h1, .h1,
+  h2, .h2,
+  h3, .h3,
+  h4, .h4,
+  h5, .h5,
+  h6, .h6,
+  .h{
+    color: $color-white;
+  }
+}
+
+sub,sup{
+  position: static;
+  height: auto;
+}
+
+sup {
+  bottom: auto;
+  font-size: .7em;
+  vertical-align: top;
+}
+
+
+sub {
+  font-size: 0.8em;
+  top: auto;
+  vertical-align: bottom;
+}

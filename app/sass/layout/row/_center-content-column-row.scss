@@ -1,0 +1,49 @@
+
+
+
+.center-content-column-row{
+  .flex-content-column{
+    .fcc-wrap {
+      @include media(">=desktop") {
+        /*
+        @include transform(translateY(-50%));
+        position: relative;
+        top: 50%;
+        */
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        direction: ltr;
+        height: 100%;
+        width: 100%;
+
+        .fcc-content{
+          margin-top: auto;
+          margin-bottom: auto;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .flex-image-column{
+
+    @include media("<desktop") {
+      background-image: none !important;
+    }
+
+    .et_pb_image{
+      @include media(">=desktop") {
+        opacity: 0 !important;
+      }
+    }
+
+    &.flex-image-column-right{
+      @include media(">=desktop") {
+        order: 2 !important;
+      }
+    }
+  }
+}

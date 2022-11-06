@@ -1,0 +1,225 @@
+//======================================================================
+// HEADER
+// - Top Menu
+// - Main menu
+// - Main menu - Fixed Header
+// - Has Children
+//======================================================================
+
+//-----------------------------------------------------
+// Default
+//-----------------------------------------------------
+#et-info,
+#et-secondary-menu>ul>li a {
+  padding-bottom: 0;
+}
+
+//-----------------------------------------------------
+// Top Menu
+//-----------------------------------------------------
+#top-header{
+  background: $color-white;
+  font-size: 14px;
+
+  .container{
+    max-width: 1336px !important;
+    padding-top: 0;
+    font-weight: $fw-light;
+  }
+
+  ul{
+    margin-bottom: 0;
+  }
+
+  a{
+    @extend %linkAnimate;
+    color: $color-black;
+  }
+
+  li{
+    &.current-menu-item,
+    &.current-menu-ancestor,
+    &.current-menu-parent,
+    &:hover{
+      >a{
+        color: $link-hover-color;
+        opacity: 1 !important;
+      }
+    }
+  }
+
+  #et-secondary-nav{
+    padding-top: 17px;
+
+    li{
+      margin-right: 0;
+    }
+
+    >li {
+      margin-right: 34px;
+
+      &:last-child{
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+//-----------------------------------------------------
+// Main menu
+//-----------------------------------------------------
+#main-header{
+  margin: 0;
+  @include box-shadow(none !important);
+
+  .container{
+    max-width: 1336px !important;
+    position: relative;
+  }
+
+  .logo_container{
+    left: 0;
+    z-index: 3;
+    width: 250px;
+
+    @include media("<desktop-bootstrap"){
+      width: 50%;
+      z-index: 3;
+    }
+  }
+
+  #logo {
+    max-height: 100%;
+    height: auto !important;
+    width: auto;
+    left: -5px;
+    position: relative;
+    max-width: 85% !important;
+  }
+
+  #et-top-navigation{
+    font-weight: $fw-regular;
+    z-index: 2;
+    position: relative;
+
+    @include media("<desktop-bootstrap"){
+      width: 100%;
+      z-index: 1;
+    }
+
+    ul{
+      margin-bottom: 0;
+    }
+
+    .nav{
+
+      li{
+        font-size: 18px;
+        line-height: 1.3;
+        padding-right: 0;
+
+        ul{
+          background: $color-white;
+          padding: 10px 0;
+
+          >li{
+            padding: 0;
+            vertical-align: middle;
+            display: block;
+            width: 100%;
+            margin: 0;
+
+            >a{
+              color: $color-black;
+              font-weight: $fw-regular;
+              width: 100%;
+              padding: 10px;
+              font-size: 14px;
+              line-height: 1.3;
+              display: block;
+
+              &:hover{
+                color: $link-hover-color;
+              }
+            }
+
+            .sub-menu{
+              top: 100%;
+              left: 0;
+            }
+          }
+        }
+      }
+
+      a{
+        @extend %linkAnimate;
+        color: $color-black;
+        background: transparent;
+        &:hover{
+          color: $link-hover-color;
+          opacity: 1;
+        }
+      }
+
+      li{
+        &.current-menu-item,
+        &.current-menu-ancestor,
+        &.current-menu-parent{
+          >a{
+            color: $link-hover-color;
+          }
+        }
+      }
+
+      >li{
+        padding-right: 14px;
+        padding-bottom: 0;
+
+        @include media("<macbook-13"){
+          padding-right: 0;
+        }
+
+        &:last-child{
+          padding-right: 0;
+        }
+
+        >a{
+          padding: 16px 0 46px !important;
+        }
+      }
+    }
+
+  }
+
+}
+
+//-----------------------------------------------------
+// Main menu - Fixed Header
+//-----------------------------------------------------
+#main-header.et-fixed-header {
+  @include box-shadow(0 0 7px rgba(0,0,0,.1)!important);
+}
+
+
+//-----------------------------------------------------
+// Has Children
+//-----------------------------------------------------
+#et-secondary-nav{
+  .menu-item-has-children{
+    >a:first-child{
+      &:after{
+        display: none !important;
+      }
+    }
+  }
+}
+
+#top-menu{
+  .menu-item-has-children{
+    >a:first-child{
+      &:after{
+        display: none !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,97 @@
+//======================================================================
+// DEFAULT SINGLE STYLE
+// - Default Style
+// - Previous and Next
+//======================================================================
+//-----------------------------------------------------
+// Default Style
+//-----------------------------------------------------
+.pagination{
+  width: 100%;
+}
+
+.wp-pagenavi,
+.nav-links{
+  text-align: left;
+}
+
+.wp-pagenavi,
+.nav-links,
+.page-links,
+.navigation{
+  @extend %clearfix;
+  width: auto;
+  margin: 10px -10px;
+  border-top: none!important;
+  padding: 0;
+
+  .page-numbers,
+  span.current,
+  span.pages,
+  a,
+  .extend,
+  .nextpostslink,
+  .previouspostslink{
+    font-weight: $fw-regular !important;
+    @include border-radius(0);
+    @include box-shadow(none !important);
+    display: inline-block;
+    border: none !important;
+    margin: 0;
+    padding: 10px;
+    color: $gray-light !important;
+
+    &:hover {
+      color: $gray-dark !important;
+      border: none !important;
+      @include box-shadow(none !important);
+    }
+
+  }
+
+  span.current {
+    font-weight: $fw-bold !important;
+  }
+
+
+}
+
+//-----------------------------------------------------
+// Default Style
+//-----------------------------------------------------
+
+.nav-links,
+.navigation{
+  .nav-previous,
+  .nav-next,
+  .alignleft,
+  .alignright{
+    padding: 15px 0;
+    width: percentage(6/12);
+    float: left;
+    margin: 0;
+
+    a{
+      margin: 0;
+    }
+  }
+
+  .nav-previous,
+  .alignleft{
+    text-align: left;
+    padding-right: 15px;
+    .fa{
+      margin: 0 5px 0 0;
+    }
+  }
+
+  .nav-next,
+  .alignright{
+    text-align: right;
+    padding-left: 15px;
+
+    .fa{
+      margin: 0 0 0 5px;
+    }
+  }
+}

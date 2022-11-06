@@ -1,0 +1,139 @@
+//===================================================
+// FOOTER
+// - Main Footer
+// - Above Footer widgets
+// - Footer Widgets
+// - Above Footer Widgets
+// - Footer bottom
+//===================================================
+//---------------------------------------------------
+// - Main Footer
+//---------------------------------------------------
+#main-footer{
+  font-family: $body-font-family;
+  font-weight: $fw-regular;
+  color: $color-white-smoke;
+  background: $color-black;
+  font-size: 18px;
+  line-height: 1.1;
+
+  a{
+    @extend %linkAnimate;
+    color: $color-silver;
+
+    &:hover{
+      color: $color-white;
+    }
+  }
+}
+
+//---------------------------------------------------
+// - Above Footer widgets
+//---------------------------------------------------
+#et-above-footer-widgets{
+  background: $color-black;
+  padding: 27px 0 35px;
+}
+
+//---------------------------------------------------
+// - Footer widgets
+//---------------------------------------------------
+#footer-widgets{
+  padding: 20px 0 35px !important;
+
+  .footer-widget{
+    li{
+      padding-left: 0;
+      &:before{
+        display: none;
+      }
+    }
+
+    &:last-child{
+      margin-bottom: 0 !important;
+
+      @include media("<desktop"){
+        margin-bottom: 0 !important;
+      }
+
+      @include media("<tablet"){
+        margin-bottom: 0 !important;
+      }
+    }
+
+
+    .fwidget {
+      float: none;
+      display: block;
+      margin: 10px 0 !important;
+
+      &:last-child{
+        margin: 0 !important;
+      }
+    }
+
+    .title{
+      font-size: 13px;
+      line-height: 1.4;
+      margin-bottom: 0;
+      padding-bottom: 28px;
+    }
+  }
+}
+
+//---------------------------------------------------
+// - Footer bottom
+//---------------------------------------------------
+#footer-bottom{
+  background: $color-black;
+  padding: 8px 0 9px;
+
+  .bottom-nav {
+    padding: 0;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 -10px;
+
+    li{
+      padding: 0 10px;
+      font-weight: $fw-regular;
+      font-size: 12px;
+      line-height: 1.1;
+    }
+  }
+
+  #footer-info{
+    color: $color-white-smoke;
+    font-size: 12px;
+    line-height: 1.1;
+
+    @include media("<tablet"){
+      text-align: center;
+      padding: 24px 10px 31px;
+    }
+  }
+}
+
+//social icons
+#footer-bottom{
+
+  .et-social-icons{
+    font-size: 24px;
+    line-height: 1.1;
+
+    @include media("<tablet"){
+      text-align: center;
+    }
+
+    .menu-item{
+      margin: 6px;
+
+      a {
+        @extend %linkAnimate;
+        color: $color-white;
+        display: block;
+      }
+    }
+  }
+
+}
