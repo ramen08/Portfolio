@@ -12,10 +12,13 @@
 #main-footer{
   font-family: $body-font-family;
   font-weight: $fw-regular;
-  color: $color-white-smoke;
-  background: $color-black;
+  color: $color-white;
+  background: $color-blue-zodiac;
   font-size: 18px;
   line-height: 1.1;
+  border-top: 5px solid;
+  border-image-source: linear-gradient(to right, $color-turquoise, $color-elm);
+  border-image-slice: 1;
 
   a{
     @extend %linkAnimate;
@@ -85,8 +88,12 @@
 // - Footer bottom
 //---------------------------------------------------
 #footer-bottom{
-  background: $color-black;
+  background: $color-blue-zodiac;
   padding: 8px 0 9px;
+
+  @include media("<desktop"){
+    padding: 15px 0 9px;
+  }
 
   .bottom-nav {
     padding: 0;
@@ -102,14 +109,26 @@
     }
   }
 
+  .footer-info {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+
+    @include media("<desktop"){
+      flex-direction: column;
+    }
+  }
+
   #footer-info{
     color: $color-white-smoke;
     font-size: 12px;
     line-height: 1.1;
+    padding-bottom: 0;
 
-    @include media("<tablet"){
+    @include media("<desktop"){
       text-align: center;
-      padding: 24px 10px 31px;
+      padding: 20px 10px 11px;
     }
   }
 }
@@ -117,7 +136,7 @@
 //social icons
 #footer-bottom{
 
-  .et-social-icons{
+  .bottom-nav{
     font-size: 24px;
     line-height: 1.1;
 
@@ -126,12 +145,19 @@
     }
 
     .menu-item{
-      margin: 6px;
+      margin: 0;
 
       a {
         @extend %linkAnimate;
         color: $color-white;
         display: block;
+        font-size: 16px;
+        margin: 0;
+
+        &:hover {
+          color: $color-elm;
+          opacity: 1;
+        }
       }
     }
   }

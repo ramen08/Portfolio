@@ -19,6 +19,13 @@ $time-2: 120s;
 $time-3: 180s;
 $time-4: 200s;
 
+$color-blue-zodiac: #0D2644;
+$color-astral: #2F7BAD;
+$color-aquamarine-blue: #7CBEE0;
+$color-turquoise: #2BC2BD;
+$color-elm: #1F9572;
+
+
 $gray-base:              #000 !default;
 $gray-darker:            lighten($gray-base, 13.5%) !default; // #222
 $gray-dark:              lighten($gray-base, 20%) !default;   // #333
@@ -29,6 +36,7 @@ $gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
 //defaults
 $sans-serif: sans-serif;
 $font-open-sans: 'Open Sans', $sans-serif;
+$font-montserrat: 'Montserrat', $sans-serif;
 
 // Font Family
 
@@ -37,7 +45,7 @@ $body-font-size: 18px !default;
 $body-line-height: 1.625 !default;
 $body-font-size-mobile: 16px !default;
 $body-font-family: $font-open-sans !default;
-$body-color: $gray-base !default;
+$body-color: $color-white !default;
 $font-awesome: "Font Awesome 5 Pro";
 
 // Headers
@@ -86,7 +94,7 @@ $fw-bolder: 900;
 $link-color: $color-carribean;
 
 //** Link hover color set via `darken()` function.
-$link-hover-color:      darken($link-color, 15%) !default;
+$link-hover-color: $color-astral !default;
 //** Link hover decoration.
 $link-hover-decoration: underline !default;
 
@@ -96,4 +104,4 @@ $link-hover-decoration: underline !default;
 
 $button-letter-spacing:0;
 $button-font-size:24px;
-$button-font-weight:$fw-regular;
+$button-font-weight:$fw-medium;

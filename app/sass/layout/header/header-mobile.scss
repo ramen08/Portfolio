@@ -44,6 +44,8 @@
   @include animation(transform, 0.5s, ease-in-out);
   margin: 27px 0 !important;
   padding: 1px 0 !important;
+  cursor: pointer;
+  top: -8px;
 
   &:before,
   &:after{
@@ -56,10 +58,11 @@
     @include animation(transform, 0.5s, ease-in-out);
     padding-bottom: 0 !important;
     width: 100% !important;
-    height: 2px;
+    height: 4px;
     background: $color-black;
     display: block;
     margin-top: 10px;
+    border-radius: 20;
 
     &:before,
     &:after{
@@ -68,11 +71,12 @@
       font-family: $body-font-family;
       position:absolute;
       width: 100%;
-      height: 2px;
+      height: 4px;
       background: $color-black;
       opacity:1 !important;
       @include transform(none);
       left:0;
+      border-radius: 20px;
     }
 
     &:before {
@@ -122,11 +126,12 @@
 }
 
 .et_mobile_menu{
-  border-top: 3px solid $color-carribean;
+  border-top: 5px solid;
+  border-image-source: linear-gradient(to right, $color-turquoise, $color-elm);
+  border-image-slice: 1;
   @include transform(translateX(-50%));
   @include box-shadow( 0 16px 16px rgba(10,10,10,.2) );
-  padding: 15px 6.5% .5rem!important;
-  border-top: none;
+  padding: 0 6.5% 0!important;
   width: 115%;
   left: 50%;
 }
@@ -210,10 +215,23 @@
 #et_mobile_nav_menu{
   //default
   .et_mobile_menu > li{
+
+    &:first-child {
+      >a {
+        padding-top: 20px;
+      }
+    }
+
+    &:last-child {
+      >a {
+        padding-bottom: 20px;
+      }
+    }
+
     >a{
       font-weight:$fw-bold;
       text-transform:uppercase;
-      padding: 12px 25px 12px;
+      padding: 8px 25px 8px;
     }
   }
 

@@ -9,6 +9,12 @@ jQuery(function(){
     initHeaderAccordionMenu();
 });
 
+jQuery(window).on("orientationchange resize load", function(){
+    setTimeout(function () {
+         initFullHeightSection();
+    },1000);
+});
+
 //======================================================================
 // Page Loader
 //======================================================================
@@ -168,4 +174,51 @@ function initHeaderAccordionMenu() {
         jQuery('#top-menu li.menu-item-home').removeClass('current_page_item');
         jQuery('#top-menu li.menu-item-home').removeClass('current-menu-item');
     }
+}
+
+//-----------------------------------------------------
+// Full Height Section
+//-----------------------------------------------------
+function initFullHeightSection(){
+
+
+    //for fullscreen
+    jQuery('.fullheight-section').each(function () {
+        var $this = jQuery(this),
+        $window_width = jQuery( window ).innerWidth(),
+        $window_innerheight = jQuery(window).innerHeight(),
+        $menu_offset = -1;
+
+        if ( $window_width > 980 ) {
+            $menu_offset += jQuery('#et-top-navigation').outerHeight();
+        }
+
+        if ( jQuery('#wpadminbar').length && $window_width > 600 ) {
+            $menu_offset += jQuery( '#wpadminbar' ).outerHeight();
+        }
+
+        var $innerheight = $window_innerheight - $menu_offset;
+
+        $this.css( 'min-height', $innerheight + 'px' );
+
+    });
+
+    jQuery('.home-fwh, .fwh-banner').each(function () {
+        var $this = jQuery(this),
+        $window_width = jQuery( window ).innerWidth(),
+        $window_innerheight = jQuery(window).innerHeight(),
+        $menu_offset = -1;
+
+
+        if ( jQuery('#wpadminbar').length && $window_width > 600 ) {
+            $menu_offset += jQuery( '#wpadminbar' ).outerHeight();
+        }
+
+        var $innerheight = $window_innerheight - $menu_offset;
+
+        $this.css( 'min-height', $innerheight + 'px' );
+
+
+    });
+
 }

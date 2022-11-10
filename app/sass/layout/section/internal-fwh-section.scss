@@ -1,0 +1,19 @@
+//======================================================================
+// Internal FWH
+// - Default
+//======================================================================
+
+//-----------------------------------------------------
+// - Default
+//-----------------------------------------------------
+.internal-fwh-section {
+    padding: 100px 0 !important;
+    border-bottom: 5px solid;
+    border-image-source: linear-gradient(to right, $color-turquoise, $color-elm);
+    border-image-slice: 1;
+
+    h1 {
+        font-family: $font-montserrat;
+        text-transform: uppercase;
+    }
+}

@@ -60,6 +60,8 @@ $media-expressions: (
 @import "layout/row/center-content-column-row";
 
 //sections
+@import "layout/section/internal-fwh-section";
+@import "layout/section/blurb-section";
 
 //widgets
 
@@ -73,3 +75,6 @@ $media-expressions: (
 
 @import "layout/pages/home/home-banner";
 @import "layout/pages/home/about-section";
+@import "layout/pages/home/project-section";
+
+@import "layout/pages/contact/contact-section";

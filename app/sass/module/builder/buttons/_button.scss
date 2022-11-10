@@ -57,8 +57,9 @@ $big_button_padding: 15px 24px;
 .woocommerce button.button.alt.disabled, .woocommerce input.button, .woocommerce input.button.alt{
   @extend %linkAnimate;
   @include border-radius(0);
-  background-color: $color-black;
-  border-color: $color-black;
+  //background-color: $color-black;
+  //border-color: $color-black;
+  background-image: linear-gradient(to right, $color-turquoise 0%, $color-elm 51%, $color-turquoise  100%);
   font-size: $button-font-size;
   font-weight: $button-font-weight;
   letter-spacing: $button-letter-spacing;
@@ -66,21 +67,22 @@ $big_button_padding: 15px 24px;
   line-height: 1.208em !important;
   padding: $button_padding;
   position: relative;
-  text-transform: uppercase;
   text-align: center;
-  border-width: 2px;
-  border-style: solid;
-  font-family:$body-font-family;
+  font-family:$font-montserrat;
   cursor: pointer;
   max-width: none;
   width: auto;
   min-width: 142px;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: $color-white;            
+  border-radius: 10px;
+  border-color: transparent;
 
   &:hover{
     padding: $button_padding;
-    color: $color-black;
-    border-color: $color-black ;
-    background: $color-white;
+    background-position: right center;
+    color: $color-white;
   }
 
   &:after{

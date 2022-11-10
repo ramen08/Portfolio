@@ -1,27 +1,28 @@
 //======================================================================
-// Home Banner
+// About
 // - Default
 //======================================================================
 
 //-----------------------------------------------------
 // - Default
 //-----------------------------------------------------
-//===================================
-// - About
-//===================================
 .about-section{
     color: $color-white;
-    padding: 30px 0;
+    z-index: 9;
   
     .et_pb_row{
   
       .et_pb_column{
         display: inline-block;
-        width: 50%;
-        float: left;
+        //width: 50%;
+        //float: left;
   
         @media only screen and (max-width: 980px) {
           width: 100%;
+        }
+
+        p {
+          padding-bottom: 10px;
         }
   
         &.img-col{
@@ -52,6 +53,7 @@
   
         ul{
           column-count: 2;
+          max-width: 500px;
         }
       }
     }
@@ -71,3 +73,12 @@
     100% {border-left: 2px solid #ffffff;}
   }
   
+//-----------------------------------------------------
+// - Typography
+//-----------------------------------------------------
+.about-section{
+
+  .heading-block {
+
+  }
+}
