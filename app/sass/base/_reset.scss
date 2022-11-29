@@ -83,6 +83,8 @@ img{
 
 
 #main-content{
+  background-color: $color-astral;
+
   a{
     word-wrap: break-word;
     word-break: break-word;
@@ -229,5 +231,27 @@ img{
     display: inline-block;
     position: absolute;
     top: -50%;
+  }
+}
+
+.single-post {
+  .et_post_meta_wrapper {
+    padding-top: 0 !important;
+
+    .post-meta {
+      display: none;
+    }
+
+    h1 {
+      padding-bottom: 25px;
+    }
+
+    #comment-wrap {
+      display: none;
+    }
+  }
+
+  .et_pb_post {
+    padding-top: 50px;
   }
 }

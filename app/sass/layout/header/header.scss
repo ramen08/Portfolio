@@ -149,6 +149,26 @@
 
               &:hover{
                 color: $color-astral;
+
+                &:before {
+                  transform-origin: 0 50%;
+                  transform: scaleX(1);
+                }
+              }
+
+              &:before {
+                content: "";
+                width: 100%;
+                height: 5px;
+                position: absolute;
+                left: 0;
+                top: 40px;
+                background: $color-astral;
+                pointer-events: none;
+                transition: transform cubic-bezier(.76,.09,.215,1) .4s;
+                transform-origin: 100% 50%;
+                transform: scaleX(0);
+                margin-top: -1px;
               }
             }
 
@@ -170,6 +190,26 @@
         &:hover{
           color: $color-astral;
           opacity: 1;
+
+          &:before {
+            transform-origin: 0 50%;
+            transform: scaleX(1);
+          }
+        }
+
+        &:before {
+          content: "";
+          width: 100%;
+          height: 5px;
+          position: absolute;
+          left: 0;
+          top: 40px;
+          background: $color-astral;
+          pointer-events: none;
+          transition: transform cubic-bezier(.76,.09,.215,1) .4s;
+          transform-origin: 100% 50%;
+          transform: scaleX(0);
+          margin-top: -1px;
         }
       }
 
@@ -179,6 +219,31 @@
         &.current-menu-parent{
           >a{
             color: $link-hover-color;
+
+            &:before {
+              content: "";
+              width: 100%;
+              height: 5px;
+              position: absolute;
+              left: 0;
+              top: 40px;
+              background: $color-astral;
+              pointer-events: none;
+              transition: transform cubic-bezier(.76,.09,.215,1) .4s;
+              transform-origin: 0% 50%;
+              transform: scaleX(1);
+              margin-top: -1px;
+            }
+          }
+
+          &.menu-item-home {
+            >a{
+              color: $color-blue-zodiac;
+  
+              &:before {
+                display: none;
+              }
+            }
           }
         }
       }

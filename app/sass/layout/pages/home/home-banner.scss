@@ -116,10 +116,31 @@
     font-size: 46px;
     color: $color-white;
     width: 100%;
+
+    @include media("<desktop"){
+      font-size: 40px;
+    }
+
+    @include media("<tablet"){
+      font-size: 27px;
+    }
+
+    @include media("<xs-phone"){
+      font-size: 22px;
+    }
   }
 
   .et_pb_fullwidth_header_subhead {
     font-size: 26px;
+    line-height: 1.2;
+
+    @include media("<tablet"){
+      font-size: 22px;
+    }
+
+    @include media("<xs-phone"){
+      font-size: 20px;
+    }
   }
 
   .home-banner{
@@ -175,6 +196,19 @@
     display: inline-block;
     vertical-align: bottom;
     color: $color-aquamarine-blue;
+    max-width: 504px;
+    
+    @include media("<desktop"){
+      max-width: 443px;
+    }
+
+    @include media("<tablet"){
+      max-width: 312px;
+    }
+
+    @include media("<=xs-phone"){
+      max-width: 266px;
+    }
   }
 
   /* The typing effect */
@@ -183,11 +217,11 @@
       width: 0;
     }
     45% { 
-      width: 504px;
+      width: 100%;
     }
 
     65% { 
-      width: 504px;
+      width: 100%;
     }
   }
 
